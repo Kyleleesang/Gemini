@@ -1,7 +1,46 @@
-# Substrate Node Template
+Gemini is a sister chain to Argonaut focused on BPQS signatures and a UTXO base, an experimental derivation of Argonaut:
 
-A new FRAME-based Substrate node, ready for hacking :rocket:
+# Argonaut Chain
 
+Argonaut Chain is a hybrid PoW and PoS chain build in rust on the substrate framework to solve the blockchain trilemma. Argonaut Chain is incorporating the MBPQS signature scheme for long term quantum security and the blake256 hashing algorithm for more efficient mining. The Prism consensus protocol will be implemented to ensure scalability up to 70,000 tps, Fountain codes for blockchain bootstrap cost and size reduction along with Integrated with IPFS to solve the blockchain  bloat problem 
+
+
+
+
+[Multi Blockchain Post Quantum signatures](https://eprint.iacr.org/2018/658.pdf)
+
+We switched to Falcon512 for now
+
+We plan to use the MBPQS algorithm to generate a chain of one time quantum resistant signatures from the public and private key pair in order to give us quantum secure signatures as in the Blockchained Post Quantum Signatures paper written by the R3 blockchain firm. Blake256 is chosen over SHA256 because of its significantlly improved cycles to bytes performance.
+
+
+[Prism for scalability](https://arxiv.org/pdf/1909.11261.pdf)
+
+The prism protocol will be implemented for our consensus protocol enabling us to scale to 70k tps 
+
+
+[SeF secure fountain codes for 1000x storage savings](https://arxiv.org/pdf/1906.12140.pdf)
+
+We plan to use the secure fountain code implementation to encode blocks of the Blockchain state into droplet nodes to reduce the bootstrap cost of a full node and reduce the chain size exponentially in order to provide increased security and decentralization, in test of the Bitcoin blockchain over a 90% reduction in the Blockchain size from over 190GB to 191MB
+
+
+[IPFS for offchain multimedia content](https://docs.ipfs.io/concepts)
+
+IPFS will be used to host websites and other multimedia content offchain in order to reduce the bloat, while storing the releveant Content ID's and hashes into the Blockchain itself. Staking rewards will be distributed to droplet nodes which host IPFS content submitted to the main chain
+
+
+# ToDo List (Ongoing)
+Implement orbitDB to have an IPFS based UTXO store
+
+Implement Zcoin style chainlocks to prevent against PoW attacks
+
+Implement ERC721 standard from substrate
+
+Implement custom Ink! smart contract Logic
+
+Implement MBPQS
+
+Implement Prism-Substrate Blocks
 ## Getting Started
 
 This project contains some configuration files to help get started :hammer_and_wrench:
