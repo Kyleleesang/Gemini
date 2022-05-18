@@ -1,4 +1,4 @@
-Gemini is a sister chain to Argonaut focused on BPQS signatures and a UTXO base, an experimental derivation of Argonaut:
+Gemini is a sister chain to Argonaut focused on Hash Based cryptography instead of Lattice Based and a UTXO base instead of an Account Model, an experimental derivation of Argonaut:
 
 # Argonaut Chain
 
